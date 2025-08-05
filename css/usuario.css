@@ -1,0 +1,71 @@
+.usuario-container {
+  display: flex; /* Ativa o Flexbox no container principal */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  padding: 40px;
+}
+
+.usuario-perfil {
+  background-color: white;
+  border: 1px solid #000000;
+  padding: 30px;
+  width: 800px;
+  position: relative;
+
+  display: flex; /* Ativa o Flexbox neste container */
+  flex-direction: row; /* Organiza os itens (foto e informações) em linha (lado a lado) */
+  gap: 40px; /* Espaçamento entre os itens */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+.usuario-foto {
+  display: flex; /* Ativa Flexbox na área da foto */
+  flex-direction: column; /* Organiza os elementos (caso haja mais) em coluna */
+  align-items: center; /* Centraliza horizontalmente a imagem */
+}
+
+.usuario-foto img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: lightgray;
+  object-fit: cover;
+}
+
+.usuario-informacoes {
+  display: flex; /* Ativa Flexbox nas informações */
+  flex-direction: column; /* Organiza os parágrafos em coluna (de cima para baixo) */
+  justify-content: center; /* Centraliza verticalmente os textos dentro da coluna */
+  flex: 1; /* Ocupa o espaço restante do lado direito */
+}
+
+.usuario-informacoes p {
+  margin: 10px 0;
+}
+
+.usuario-informacoes a {
+  color: #000000;
+  font-weight: 500;
+}
+
+.usuario-decor {
+  position: absolute; /* Posicionamento absoluto dentro do .usuario-perfil */
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+}
+
+/* Responsividade: quando a tela for menor que 768px */
+@media (max-width: 768px) {
+  .usuario-perfil {
+    flex-direction: column; /* Muda a direção para coluna: empilha os elementos */
+    align-items: center; /* Centraliza os itens no eixo horizontal */
+    text-align: center;
+    width: 100%;
+  }
+
+  .usuario-decor {
+    position: static; /* Volta a fazer parte do fluxo normal da página */
+    margin-top: 20px;
+    align-self: center; /* Centraliza dentro do Flex container */
+  }
+}

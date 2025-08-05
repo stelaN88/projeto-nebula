@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo Flexbox</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #184B7E;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row; /* Pode trocar para column se quiser em coluna */
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .menu {
+      background-color: #9CB8D2;
+      padding: 20px;
+      width: 200px;
+      flex-shrink: 0;
+    }
+
+    .conteudo {
+      background-color: #f0f0f0;
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Minha Página Flexbox</h1>
+  </header>
+
+  <div class="container">
+    <div class="menu">
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+    <div class="conteudo">
+      <h2>Bem-vindo!</h2>
+      <p>Este é um exemplo de layout com Flexbox. O menu está ao lado do conteúdo principal.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 - Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

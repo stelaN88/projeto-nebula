@@ -1,0 +1,171 @@
+
+.container-livro {
+  display: grid; /* Layout em grade com 3 colunas */
+  grid-template-columns: 80px 250px 1fr;
+  gap: 30px; /* Espaçamento entre as colunas */
+  align-items: start;
+}
+
+.pagina-livro {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.box-livro {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.galeria img {
+  width: 60px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.capa-principal img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.estrelas {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.6rem;
+  color: gold;
+}
+
+.info-livro h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.info-livro p {
+  font-size: 1.05rem;
+  margin: 5px 0;
+}
+
+.botoes {
+  margin-top: 20px;
+}
+
+button.ler,
+button.fila {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+button.ler {
+  background-color: #9335ae;
+  color: white;
+  margin-right: 10px;
+}
+
+button.fila {
+  background-color: #ead9f3;
+  color: #333;
+}
+
+.avaliacao {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.comentarios {
+  font-size: 0.95rem;
+  text-decoration: underline;
+  color: #6a1b9a;
+}
+
+.button-container {
+  display: flex; /* Coloca os botões lado a lado */
+  gap: 10px;      /* Espaçamento entre os botões */
+  margin-top: 20px;
+}
+
+.read-btn {
+  background-color: #9c27b0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.favorite-btn {
+  background-color: #9c27b0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Usando media query */
+@media (max-width: 600px) {
+  /* Troca o layout grid da .container-livro para flex column */
+  .container-livro {
+    display: flex;              /* Troca de grid para flex */
+    flex-direction: column;     /* Empilha os elementos verticalmente */
+    align-items: center;        /* Centraliza horizontalmente */
+  }
+
+  .galeria {
+    display: flex;              /* Organiza as miniaturas em linha */
+    gap: 10px;                  /* Espaço entre as imagens */
+    margin-bottom: 20px;
+  }
+
+  .galeria img {
+    width: 50px;                /* Reduz o tamanho das miniaturas */
+  }
+
+  .capa-principal img {
+    max-width: 200px;           /* Reduz a capa principal para caber em telas menores */
+  }
+
+  .info-livro {
+    width: 100%;                /* Ocupa toda a largura da tela */
+    text-align: center;         /* Centraliza os textos */
+  }
+
+  .button-container {
+    flex-direction: column;     /* Empilha os botões */
+    align-items: center;        /* Centraliza os botões */
+  }
+
+  .button-container button {
+    width: 100%;                /* Botões ocupam a largura total */
+    max-width: 250px;           /* Com limite máximo */
+  }
+
+  .box-livro {
+    padding: 20px 10px;         /* Reduz o padding lateral */
+  }
+
+  nav.menu {
+    flex-direction: column;     /* Empilha os links do menu */
+    align-items: center;        /* Centraliza os itens */
+    gap: 10px;                  /* Espaçamento entre os itens */
+  }
+}

@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #fefefe;
+}
+
+/* Aqui vou usar o flexbox no header. */
+header {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to right, #c51f90, #4d97cc);
+    color: rgb(255, 254, 254);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+/* Aqui vou usar o flexbox na pesquisa. */
+.pesquisa {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Aqui vou usar o flexbox no menu. */
+.menu {
+    background-color: #fbf6b6;
+    display: flex;
+    /* Aqui ficará um de cada lado em forma de linha */
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 10px 30px;
+    vertical-align: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Usando media query. Quando for menor que 600px vou ajustar o tamanho do input, e direções do header e menu  */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    /* Aqui vou mudar a flex direção de linha para coluna  */
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        gap: 15px;
+    }
+}
+
+/* Outras classes  */
+.logo {
+    height: 60px;
+}
+
+input[type="text"] {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+}
+
+.icones .icon {
+    width: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.voltar {
+    font-size: 1rem;
+    color: #555;
+}
+
+.voltar a {
+    color: #6a1b9a;
+    text-decoration: none;
+    margin-right: 5px;
+}

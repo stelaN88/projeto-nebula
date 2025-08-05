@@ -1,0 +1,13 @@
+.meu-pdf {
+    width: 100%;
+    height: 900px;
+    border: none;
+  }
+  
+  /* Em telas menores (máx 768px) */
+  @media (max-width: 768px) {
+    .meu-pdf {
+      height: 70vh; 
+    }
+  }
+  

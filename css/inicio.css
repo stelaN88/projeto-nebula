@@ -1,0 +1,54 @@
+/* usando grid. */
+.galeria-livros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* repete os livros, com no min/máx 180px para cada coluna */
+    gap: 20px; /* espaço interno entre os elementos */
+    padding: 20px; /* espaço ao redor da galeria */
+}
+
+/* Outras classes  */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url('../foto/Captura\ de\ tela\ 2025-07-21\ 105545.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.citacao-banner {
+    position: absolute;
+    top: 20px;         
+    right: 30px;      
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-style: italic;
+    font-size: 1.1rem;
+    max-width: 300px;
+    text-align: right;
+}
+.livro {
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.2s;
+}
+.livro:hover {
+    transform: scale(1.05);
+}
+
+.livro img {
+    width: 100%;
+    border: 8px solid #fbf6b6;
+    border-radius: 5px;
+    max-height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.livro p {
+    margin-top: 8px;
+    font-size: 14px;
+}

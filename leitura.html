@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/leitura.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <title>Nébula </title>
+</head>
+<body>
+  <header>
+    <div>
+      <img src="foto/logonebula.png" height="60px" alt="Logo Nébula" class="logo" />
+    </div>
+    <div>
+      <a href="inicio.html">
+        <img src="foto/iocnhome.png" height="60px"  alt="Home" class="icon" />
+      </a>
+      <a href="usuario.html">
+        <img src="foto/iconuser.png" height="60px"  alt="Perfil" class="icon" />
+      </a>
+    </div>
+  </header>
+  <nav class="menu">
+    <p class="voltar">
+      <a href="inicio.html">Voltar</a>
+    </p>
+  </nav>
+  <iframe class="meu-pdf" id="meupdf"></iframe>
+</body>
+<script>
+  //busca o nome do livro pela querystring
+  const params = new URLSearchParams(window.location.search);
+  const livro = params.get("livro");
+  const caminho = `livros/${livro}.pdf`;
+  //atribui o caminho ao iframe
+  document.getElementById("meupdf").src = caminho;
+</script>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nébula </title>
+  <link rel="stylesheet" href="css/detalhe.css" />
+  <link rel="stylesheet" href="css/global.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <img src="foto/logonebula.png" height="60px" alt="Logo Nébula" class="logo" />
+    </div>
+    <div>
+      <a href="inicio.html">
+        <img src="foto/iocnhome.png" height="60px" alt="Home" class="icon" />
+      </a>
+      <a href="usuario.html">
+        <img src="foto/iconuser.png" height="60px" alt="Perfil" class="icon" />
+      </a>
+    </div>
+  </header>
+  <nav class="menu">
+    <p class="voltar">
+      <a href="inicio.html">Voltar</a>
+    </p>
+    <a href="favoritos.html">Favoritos</a>
+  </nav>
+  <main class="pagina-livro">
+    <div class="box-livro">
+      <div class="container-livro">
+        <div class="galeria">
+          <img id="miniatura1" src="" alt="Miniatura 1">
+          <img id="miniatura2" src="" alt="Miniatura 2">
+        </div>
+        <div class="capa-principal">
+          <img id="capaLivro" src="" alt="Capa do livro">
+          <div class="estrelas" id="avaliacao"></div>
+        </div>
+        <div class="info-livro">
+          <p><small id="leituras"></small></p>
+          <h2 id="nomeLivro"></h2>
+          <p><strong>Editora:</strong> <span id="editora"></span></p>
+          <p><strong>Ano de publicação:</strong> <span id="ano"></span></p>
+          <p><strong>Número de páginas:</strong> <span id="paginas"></span></p>
+          <p><strong>Gênero:</strong> <span id="genero"></span></p>
+          <div class="botoes">
+            <a id="redirecionar">
+              <div class="button-container">
+                <button class="read-btn" id="ler">Ler agora</button>
+                <button class="favorite-btn">🤍 Favoritar</button>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script>
+  const livros = {
+    harrypotter: {
+      titulo: "Harry Potter e a Pedra Filosofal: J.K. Rowling",
+      capa: "foto/harrypotter.webp",
+      miniatura1: "foto/harrypotter.webp",
+      miniatura2: "foto/harrypotter.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de 500 leituras",
+      editora: "Rocco",
+      ano: "2024",
+      paginas: "244",
+      genero: "Conto"
+    },
+    principecruel: {
+      titulo: "O Príncipe Cruel: Holly Black",
+      capa: "foto/principecruel.webp",
+      miniatura1: "foto/principecruel.webp",
+      miniatura2: "foto/principetras.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de mil leituras",
+      editora: "Galera",
+      ano: "2022",
+      paginas: "322",
+      genero: "Ficção"
+    },
+    alice: {
+      titulo: "Alice no País das Maravilhas: Carroll Lewis",
+      capa: "foto/alice.webp",
+      miniatura1: "foto/alice.webp",
+      miniatura2: "foto/alicedetras.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de 5 mil leituras",
+      ilustracao: "Tenniel John",
+      editora: "Darkside",
+      ano: "2019",
+      paginas: "208",
+      genero: "Juvenil"
+    },
+    memoriaspostumas: {
+      titulo: "Memórias Póstumas de Brás Cubas: Brás Cubas",
+      capa: "foto/memoriaspostumas.webp",
+      miniatura1: "foto/memoriaspostumas.webp",
+      miniatura2: "foto/brascubastras.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, nenhuma estimativa de leituras",
+      editora: "Garnier",
+      ano: "2025-1888 originalmente-",
+      paginas: "160",
+      genero: "Literatura e ficção"
+    },
+    acoragemdeserimperfeito: {
+      titulo: "A Coragem de Ser Imperfeito: Brené Brown",
+      capa: "foto/acoragemdeserimperfeito.webp",
+      miniatura1: "foto/acoragemdeserimperfeito.webp",
+      miniatura2: "foto/acoragemdeserimperfeito.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de 5 mil leituras",
+      editora: "Sextante",
+      ano: "2019",
+      paginas: "192",
+      genero: "Psicologia"
+    },
+    cafecomdeuspai: {
+      titulo: "Café com Deus Pai: Junior Rostirola",
+      capa: "foto/cafecomdeuspai.webp",
+      miniatura1: "foto/cafecomdeuspai.webp",
+      miniatura2: "foto/cafetras.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de 100 mil leituras",
+      editora: "Vida",
+      ano: "2022",
+      paginas: "424",
+      genero: "Conto"
+    },
+    aHipoteseDoAmor: {
+      titulo: "A Hipótese do Amor: Ali Hazelwood",
+      capa: "foto/ahipotesedoamor.webp",
+      miniatura1: "foto/ahipotesedoamor.webp",
+      miniatura2: "foto/ahipotesedetras.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de 5 mil leituras",
+      editora: "Arqueiro",
+      ano: "2022",
+      paginas: "366",
+      genero: "Literatura e ficção"
+    },
+    oLabirintoDoFauno: {
+      titulo: "O Labirinto Do Fauno: Guillermo del Toro",
+      capa: "foto/labirinto do fauno.webp",
+      miniatura1: "foto/labirinto do fauno.webp",
+      miniatura2: "foto/labirintodetras.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de mil leituras",
+      editora: "Intrínseca Ltda",
+      ano: "2019",
+      paginas: "320",
+      genero: "Literatura e ficção"
+    },
+    cartaDeAmorAosMortos: {
+      titulo: "Carta de amor aos mortos: Ava Dellayra",
+      capa: "foto/cartasdeamoaosmortos.webp",
+      miniatura1: "foto/cartasdeamoaosmortos.webp",
+      miniatura2: null,
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de mil leituras",
+      editora: "Seguinte",
+      ano: "2014",
+      paginas: "344",
+      genero: "Infantil"
+    },
+    melhorDoQueNosFilmes: {
+      titulo: "Melhor do que nos filmes: Lynn Painter",
+      capa: "foto/melhordoquenosfilmes.webp",
+      miniatura1: "foto/melhordoquenosfilmes.webp",
+      miniatura2: "foto/melhordetras.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de 10 mil leituras",
+      editora: "Intrínseca Ltda",
+      ano: "2023",
+      paginas: "352",
+      genero: "Juvenil"
+    },
+    milBeijosDeGaroto: {
+      titulo: "Mil beijos de garoto: Tille Cole",
+      capa: "foto/milbeijos de garoto.webp",
+      miniatura1: "foto/milbeijos de garoto.webp",
+      miniatura2: "foto/milatras.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de 5 mil leituras",
+      editora: "Planeta",
+      ano: "2017",
+      paginas: "400",
+      genero: "Literatura e ficção"
+    },
+    mooncakes: {
+      titulo: "Mooncakes: Suzanne Walker, Wendy Xu",
+      capa: "foto/mooncakes.webp",
+      miniatura1: "foto/mooncakes.webp",
+      miniatura2: "foto/mooncakesaberto.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de mil leituras",
+      editora: "Darkside",
+      ano: "2022",
+      paginas: "272",
+      genero: "Histórias em quadrinhos, mangá e graphic novel"
+    },
+    oHomemDePalha: {
+      titulo: "O Homem de Palha: Pablo de Zorzi",
+      capa: "foto/ohomemdepalha.webp",
+      miniatura1: "foto/ohomemdepalha.webp",
+      miniatura2: "foto/homemdetras.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de mil leituras",
+      editora: "Astral",
+      ano: "2022",
+      paginas: "368",
+      genero: "Literatura e ficção"
+    },
+    verity: {
+      titulo: "Verity: Colleen Hoover",
+      capa: "foto/verity.webp",
+      miniatura1: "foto/verity.webp",
+      miniatura2: "foto/veritytras.webp",
+      avaliacao: "⭐ ⭐ ⭐ ⭐ ⭐",
+      leituras: "2025, mais de 5 mil leituras",
+      traducao: "Galera Recod",
+      editora: "Galera Record",
+      ano: "2024",
+      paginas: "360",
+      genero: "Literatura e ficção"
+    }
+
+  };
+  //Busca o filme passado por query
+  const urlParams = new URLSearchParams(window.location.search);
+  const nomeLivro = urlParams.get("livro");
+  //busca o livro da lista de livros disponíveis
+  const livro = livros[nomeLivro];
+  document.getElementById("nomeLivro").textContent = livro.titulo;
+  document.getElementById("miniatura1").src = livro.miniatura1;
+  document.getElementById("miniatura2").src = livro.miniatura2;
+  document.getElementById("capaLivro").src = livro.capa;
+  document.getElementById("avaliacao").textContent = livro.avaliacao;
+  document.getElementById("leituras").textContent = livro.leituras;
+  document.getElementById("editora").textContent = livro.editora;
+  document.getElementById("ano").textContent = livro.ano;
+  document.getElementById("paginas").textContent = livro.paginas;
+  document.getElementById("genero").textContent = livro.genero;
+  document.getElementById("redirecionar").href = "leitura.html?livro=" + urlParams.get("livro");
+
+</script>
+
+</html>
